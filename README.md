@@ -123,3 +123,96 @@ main {
   grid-area: footer;
 }
 ```
+
+#### Carousel
+Create a carousel in HTML
+```
+<main>
+  <ul data-js="ul">
+    <li data-js="one" class="one">1</li>
+    <li data-js="two" class="two">2</li>
+    <li data-js="three" class="three">3</li>
+    <li data-js="four" class="four">4</li>
+  </ul>
+</main>
+```
+Carousel in CSS
+```
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  overflow: hidden;
+  font-size: 28px;
+}
+
+ul {
+  transition: transform 0.3s ease-in;
+  height: 100vh;
+  width: 400%;
+  list-style: none;
+  display: flex;
+}
+
+li {
+  flex: 1 1 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.one {
+  background: steelblue;
+}
+.two {
+  background: crimson;
+}
+.three {
+  background: green;
+}
+.four {
+  background: blueviolet;
+}
+
+.show-two {
+  transform: translate3d(-25%, 0, 0);
+}
+.show-three {
+  transform: translate3d(-50%, 0, 0);
+}
+.show-four {
+  transform: translate3d(-75%, 0, 0);
+}
+```
+Carousel in JavaScript
+```
+/* Using this method we can create a slide show */
+
+const ul = document.querySelector("[data-js=ul]");
+const one = document.querySelector("[data-js=one]");
+const two = document.querySelector("[data-js=two]");
+const three = document.querySelector("[data-js=three]");
+const four = document.querySelector("[data-js=four]");
+
+one.addEventListener("click", e => {
+  ul.classList.toggle("show-two");
+});
+
+two.addEventListener("click", e => {
+  ul.classList.toggle("show-three");
+});
+
+three.addEventListener("click", e => {
+  ul.classList.toggle("show-four");
+});
+
+four.addEventListener("click", e => {
+  ul.classList.remove("show-two");
+  ul.classList.remove("show-three");
+  ul.classList.remove("show-four");
+});
+```
