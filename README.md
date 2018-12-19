@@ -216,3 +216,5 @@ four.addEventListener("click", e => {
   ul.classList.remove("show-four");
 });
 ```
+
+#### Modal
