@@ -88,5 +88,38 @@ holy grail in CSS
   box-sizing: border-box;
 }
 
+main {
+  display: grid;
+  height: 100vh;
+  grid-template-areas: "navbar navbar navbar"
+                       "left_addbar main_content right_addbar"
+                       "footer footer footer"
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 6fr 1fr;
+}
 
+.navbar {
+  background: steelblue;
+  grid-area: navbar;
+}
+
+.left_addbar {
+  background: hotpink;
+  grid-area: left_addbar;
+}
+
+.main_content {
+  background: #fcc;
+  grid-area: main_content;
+}
+
+.right_addbar {
+  background: hotpink;
+  grid-area: right_addbar;
+}
+
+.footer {
+  background: steelblue;
+  grid-area: footer;
+}
 ```
