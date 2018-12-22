@@ -217,4 +217,59 @@ four.addEventListener("click", e => {
 });
 ```
 
-#### Modal
+#### Snackbar
+Create a snackbar in HTML, including javascript
+```
+<body>
+  <button onclick="youDid()">Click me</button>
+  <p data-js="snackbar">Wellcom to my site</p>
+  
+  <script>
+    const para = document.querySelector(["data-js="snackbar""]);
+    function youDid() {
+      para.classList.add("snackbar--open");
+      setTimeout(() => {
+        para.classList.remove("snackbar--open");
+      }, 1300);
+    }
+  </script>
+</body>
+```
+Snackbar in CSS: 
+```
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e2e2e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 12px;
+  background: steelblue;
+  transform: translate3d(0, 80px, 0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.snackbar--open {
+  transform: translate3d(0, 0, 0);
+}
+
+button {
+  padding: 4px;
+  background: green;
+  color: ghostwhite;
+  margin: 24vh auto;
+  display: inline-block;
+}
+```
